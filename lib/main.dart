@@ -8,10 +8,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-      ),
       appBar: AppBar(
         // leading: Icon(Icons.home),
         title: Text("Flutter"),
@@ -28,28 +24,36 @@ class MyApp extends StatelessWidget {
         ],
       ),
       body: Container(
+        padding: EdgeInsets.only(top: 10.0),
         width: double.infinity,
         child: Column(
           children: <Widget>[
-            FlutterLogo(
-              style: FlutterLogoStyle.markOnly,
-              size: 100,
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage("img/fredy.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
             Text(
-              "Flutter Beginners",
+              "Fredy Nur Apriyanto",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Text(
-              "Flutter Classroom Beginners",
+              "Politeknik Harapan Bersama",
               style: TextStyle(
                 fontSize: 16,
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 15.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,32 +88,32 @@ class MyApp extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 20.0,
+              height: 15.0,
             ),
-            Stack(
-              children: <Widget>[
-                Positioned(
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blue,
-                    ),
+            Container(
+              padding: EdgeInsets.only(top: 10),
+              width: 400,
+              height: 230,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.blue[700],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: <Widget>[
+                  FlutterLogo(
+                    style: FlutterLogoStyle.markOnly,
+                    size: 100,
                   ),
-                ),
-                Positioned(
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blue[800],
-                    ),
-                  ),
-                )
-              ],
-            )
+                  Text(
+                    "Flutter",
+                    style: TextStyle(fontSize: 50, color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 5),
+            Text("Flutter Classroom Beginners"),
           ],
         ),
       ),
