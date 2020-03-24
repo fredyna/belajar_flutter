@@ -28,10 +28,89 @@ class MyApp extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: Image.asset(
-          "img/logo.png",
-          width: 200,
-          height: 200,
+        width: double.infinity,
+        child: Column(
+          children: <Widget>[
+            FlutterLogo(
+              style: FlutterLogoStyle.markOnly,
+              size: 100,
+            ),
+            Text(
+              "Flutter Beginners",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "Flutter Classroom Beginners",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Icons.home,
+                      size: 50,
+                    ),
+                    Text("Home")
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Icons.favorite,
+                      size: 50,
+                    ),
+                    Text("Favorite")
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Icons.settings,
+                      size: 50,
+                    ),
+                    Text("Settings")
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Stack(
+              children: <Widget>[
+                Positioned(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.blue[800],
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
